@@ -2,6 +2,8 @@
 #include <cmath>
 using namespace std;
 
+//JESSICA CHIU
+
 int main()
 {
 	string number; //define number
