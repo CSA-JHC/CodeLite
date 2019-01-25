@@ -7,13 +7,16 @@ using namespace std;
 int main()
 {
 	//define variables
-	int dollars, dimes, quarters, nickels, pennies, total;
+	int halfdollars, dollars, dimes, quarters, nickels, pennies, total;
 	float remainder;
-	string bills, coin1, coin2, coin3, coin4;
+	string halfbills, bills, coin1, coin2, coin3, coin4;
 	
 	//ask user how much of each coin they have to determine total amount of money
 	cout<<"How many dollars do you have? ";
 	cin>>dollars;
+	
+	cout<<"How many half dollars do you have? ";
+	cin>>halfdollars;
 	
 	cout<<"How many dimes do you have? ";
 	cin>>dimes;
@@ -27,7 +30,7 @@ int main()
 	cout<<"How many pennies do you have? ";
 	cin>>pennies;
 	
-	//check to see how many of each the user has to calculate the amount of money
+	//check to see how many of each the user has to calculate the amount of money	
 	if (dollars==1)
 	{
 		bills="dollar";
@@ -35,6 +38,15 @@ int main()
 	else
 	{
 		bills="dollars";
+	}
+	
+	if (halfdollars==1)
+	{
+		halfbills="half dollar";
+	}
+	else
+	{
+		halfbills="half dollars";
 	}
 	
 	if (dimes==1)
@@ -75,18 +87,20 @@ int main()
 	
 	//print how much of each the user has
 	cout<<"You have "<<dollars<<" "<<bills<<"\n";
+	cout<<"You have "<<halfdollars<<" "<<halfbills<<"\n";
 	cout<<"You have "<<dimes<<" "<<coin1<<"\n";
 	cout<<"You have "<<quarters<<" "<<coin2<<"\n";
 	cout<<"You have "<<nickels<<" "<<coin3<<"\n";
 	cout<<"You have "<<pennies<<" "<<coin4<<"\n";
 	
 	//multiply by appropriate amount to determine total amount of money
+	halfdollars*=50;
 	dimes*=10;
 	quarters*=25;
 	nickels*=5;
 	
 	//find the total amount
-	total=dimes+quarters+nickels+pennies;
+	total=halfdollars+dimes+quarters+nickels+pennies;
 	
 	remainder=total%100; //divide to find amount of cents
 	total/=100;
