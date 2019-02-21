@@ -48,9 +48,11 @@ int main()
 	int choice=0;
 	int amount=0;
 	
+	cout<<""
+	
 	//menu
-	cout<<"1. Calculate the amount of pennies\n";
-	cout<<"2. Calculate the amount of squares\n";
+	cout<<"1. Calculate the amount of pennies the boy will have on square X\n";
+	cout<<"2. Calculate the amount of squares he boy will have with Y amount of pennies\n";
 	cout<<"CHOICE: ";
 	cin>>choice;
 	
