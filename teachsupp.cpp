@@ -4,88 +4,109 @@ using namespace std;
 
 //JESSICA CHIU
 
-/*vector<string> genList={"plastic folders", "glue sticks","pack of colored pencils","pack of crayons","composition book"}
- * genList[0] //first item in the genList vector
- * 
- * vector<string> t_name={"Prater","Threatt","Shafer"}
- *
- * class has xyz (private member variables)
- * do things to xyz (public member variables
- * 
- * 
- * class _____
- * {
- * private:
- * supplies
- * name
- * 
- * public:
- * string getSupplies(int num)
- * {
- * supplies=gentList[num]
- * return supplies
- * }
- * string getName(num index for vector)
- * {
- * teach=t_name[num]
- * return teach
- * }
- * string getOutput()
- * {}
- * }
- * 
- * int main()
- * {
- * string getOutput(object.getSupplies,object.getName)
- * cout<<object.getSupplies(num)
- * cout<<object.getName(num)
- * }
- * 
- */
-
-class Supplies
-{
+class SupplyList{
 private:
-	string supplies1, supplies2, supplies3;
-	string name1;
+	vector<string> supply={"pack of colored pencils","pack of crayons","composition notebook","glue sticks","plastic folders", "ruler"};
+	int quantity;
+	
 public:
-	void getSupplies(int a, int b, int c)
+	void getType(int index)
 	{
-		vector<string> genList={"plastic folders", "glue sticks","pack of colored pencils","pack of crayons","composition book"};
-		supplies1=genList[a];
-		supplies2=genList[b];
-		supplies3=genList[c];
-	}
-	void getName(int x)
-	{
-		vector<string> t_name={"Prater","Threatt","Shafer"};
-		name1=t_name[x];
-	}
-	void format(string name, string supp1, string supp2, string supp3)
-	{
-		cout<<"**"<<name1<<"'s School Supplies List"<<"**"<<'\n';
-		cout<<supplies1<<'\n'<<supplies2<<'\n'<<supplies3<<'\n';
+		string x=supply[index];
 	}
 	
+	void getQuantity()
+	{
+		cout<<"This is how many of the supply you should get";
+	}
+};
+
+class Teacher{
+private:
+	vector<string> teachername={"Miss Prater", "Mrs. Threatt", "Mr. Shafer"};
+	SupplyList m;
+	
+public:
+	void getName(int z)
+	{
+		string
+	}
+	
+	void getSupplies(int y)
+	{
+		m.getType(y)
+		//vector@____
+	}
 };
 
 int main()
 {
-	string asterisk="**";
-	string ssl="School Supply List";
+	int indexnum;
 	
-	Supplies teachname, supp;
-	teachname=teachname.getName(0);
-	supp=supp.getSupplies(0,1,3);
+	Teacher t_name;
+	t_name.getName(0);
+	cout<<t_name;
 	
-	teachname=teachname.getName(1);
-	supp=supp.getSupplies(0,2,4);
+	return 0;
+}
+
+
+/*
+class Supplies
+{
+private:
+	string t_name;
+	string prefix;
+	vector<string> supplies;
 	
-	teachname=teachname.getName(2);
+public:
+	Supplies(vector<string> supplies_var, string name, char marital, char gender)
+	{
+		supplies=supplies_var;//assigns parameters to member variables
+		t_name=name;
+		if (gender=='M')//uses gender and marital status to find prefix
+		{
+			prefix="Mr. ";
+		}
+		else if (gender=='F')
+		{
+			if (marital=='M')
+			{
+				prefix="Mrs. ";
+			}
+			else if (marital=='S')
+			{
+				prefix="Miss ";
+			}
+		}
+	}
+	void getSupplies(int index)
+	{
+		vector<string> genList={"plastic folders", "glue sticks","pack of colored pencils","pack of crayons","composition book"};
+		supplies=genList[index]
+	}
+	void format(string name, string supp1, string supp2, string supp3)
+	{
+		cout<<"**"<<prefix<<t_name<<"'s School Supplies List"<<"**"<<'\n';
+		//cout<<supplies1<<'\n'<<supplies2<<'\n'<<supplies3<<'\n';
+	}
+};
+
+int main()
+{
+	char marital1='S';
+	char gender1='F';
+	char marital2='M';
+	char gender2='F';
+	char marital3='M';
+	char gender3='M';
+	
+	Supplies prater()
 	
 	
 	return 0;
 }
+ */
 
 /*
 int main()
