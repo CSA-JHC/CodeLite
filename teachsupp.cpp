@@ -10,9 +10,10 @@ private:
 	int quantity;
 	
 public:
-	void getType(int index)
+	string getType(int index)
 	{
 		string x=supply[index];
+		return x;
 	}
 	
 	void getQuantity()
@@ -24,28 +25,54 @@ public:
 class Teacher{
 private:
 	vector<string> teachername={"Miss Prater", "Mrs. Threatt", "Mr. Shafer"};
-	SupplyList m;
+	SupplyList supplything;
 	
 public:
-	void getName(int z)
+	string getName(int index)
 	{
-		string
+		string z=teachername[index];
+		
+		return z;
 	}
 	
-	void getSupplies(int y)
+	string getSupplies(int y,int z,int w)
 	{
-		m.getType(y)
-		//vector@____
+		string supply1=supplything.getType(y);
+		string supply2=supplything.getType(z);
+		string supply3=supplything.getType(w);
+		
+		return supply1,supply2,supply3;
 	}
 };
 
 int main()
 {
-	int indexnum;
+	Teacher t_name1,t_name2,t_name3;
+	Teacher supplies;
 	
-	Teacher t_name;
-	t_name.getName(0);
-	cout<<t_name;
+	//Miss Prater
+	string x=t_name1.getName(0);
+	string list=supplies.getSupplies(0,1,2);
+	
+	cout<<"**"<<x<<"'s School Supply List**\n";
+	
+	/*
+	//Mrs. Threatt
+	string y=t_name2.getName(0);
+	vector<string> allsupplies={};
+	
+	string a=supplies.getSupplies(4);
+	allsupplies.push_back(a);
+	string b=supplies.getSupplies(0);
+	allsupplies.push_back(b);
+	string c=supplies.getSupplies(2);
+	allsupplies.push_back(c);
+	
+	cout<<"**"<<x<<"'s School Supply List**\n";
+	cout<<a<<'\n';
+	cout<<b<<'\n';
+	cout<<c<<'\n'<<'\n';
+	*/
 	
 	return 0;
 }
