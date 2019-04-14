@@ -65,7 +65,7 @@ int main()
     string psupply3=supplies.getSupplies(1);
     int p_qsupply3=total.getAmount(1);
     
-	cout<<"**"<<name1<<"'s School Supply List**\n";
+    cout<<"**"<<name1<<"'s School Supply List**\n";
     cout<<p_qsupply1<<'\t'<<psupply1<<'\n'<<p_qsupply2<<'\t'<<psupply2<<'\n'<<p_qsupply3<<'\t'<<psupply3<<'\n'<<'\n';
     
     //Threatt
