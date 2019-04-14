@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <map>
 using namespace std;
 
 //JESSICA CHIU
@@ -16,160 +17,80 @@ public:
 		return x;
 	}
 	
-	void getQuantity()
+	int getQuantity(int num)
 	{
-		cout<<"This is how many of the supply you should get";
+        int number=num;
+        return num;
 	}
 };
 
 class Teacher{
 private:
 	vector<string> teachername={"Miss Prater", "Mrs. Threatt", "Mr. Shafer"};
-	SupplyList supplything;
+	SupplyList supplything,amt;
 	
 public:
 	string getName(int index)
 	{
 		string z=teachername[index];
-		
 		return z;
 	}
 	
-	string getSupplies(int y,int z,int w)
+	string getSupplies(int index)
 	{
-		string supply1=supplything.getType(y);
-		string supply2=supplything.getType(z);
-		string supply3=supplything.getType(w);
-		
-		return supply1,supply2,supply3;
+		string supply=supplything.getType(index);
+		return supply;
 	}
+    
+    int getAmount(int num)
+    {
+        int y=amt.getQuantity(num);
+        return num;
+    }
 };
 
 int main()
 {
+    //vector<string> supply={0 "pack of colored pencils", 1 "pack of crayons", 2 "composition notebook", 3 "glue sticks", 4 "plastic folders", 5 "ruler"};
+	
 	Teacher t_name1,t_name2,t_name3;
-	Teacher supplies;
+	Teacher supplies,total;
 	
 	//Miss Prater
-	string x=t_name1.getName(0);
-	string list=supplies.getSupplies(0,1,2);
+	string name1=t_name1.getName(0);
+	string psupply1=supplies.getSupplies(4);
+    int p_qsupply1=total.getAmount(3);
+	string psupply2=supplies.getSupplies(3);
+    int p_qsupply2=total.getAmount(4);
+    string psupply3=supplies.getSupplies(1);
+    int p_qsupply3=total.getAmount(1);
+    
+	cout<<"**"<<name1<<"'s School Supply List**\n";
+    cout<<p_qsupply1<<'\t'<<psupply1<<'\n'<<p_qsupply2<<'\t'<<psupply2<<'\n'<<p_qsupply3<<'\t'<<psupply3<<'\n'<<'\n';
+    
+    //Threatt
+    string name2=t_name2.getName(1);
+    string tsupply1=supplies.getSupplies(4);
+    int t_qsupply1=total.getAmount(2);
+    string tsupply2=supplies.getSupplies(0);
+    int t_qsupply2=total.getAmount(1);
+    string tsupply3=supplies.getSupplies(2);
+    int t_qsupply3=total.getAmount(1);
+    
+    cout<<"**"<<name2<<"'s School Supply List**\n";
+    cout<<t_qsupply1<<'\t'<<tsupply1<<'\n'<<t_qsupply2<<'\t'<<tsupply2<<'\n'<<t_qsupply3<<'\t'<<tsupply3<<'\n'<<'\n';
 	
-	cout<<"**"<<x<<"'s School Supply List**\n";
-	
-	/*
-	//Mrs. Threatt
-	string y=t_name2.getName(0);
-	vector<string> allsupplies={};
-	
-	string a=supplies.getSupplies(4);
-	allsupplies.push_back(a);
-	string b=supplies.getSupplies(0);
-	allsupplies.push_back(b);
-	string c=supplies.getSupplies(2);
-	allsupplies.push_back(c);
-	
-	cout<<"**"<<x<<"'s School Supply List**\n";
-	cout<<a<<'\n';
-	cout<<b<<'\n';
-	cout<<c<<'\n'<<'\n';
-	*/
-	
-	return 0;
-}
-
-
-/*
-class Supplies
-{
-private:
-	string t_name;
-	string prefix;
-	vector<string> supplies;
-	
-public:
-	Supplies(vector<string> supplies_var, string name, char marital, char gender)
-	{
-		supplies=supplies_var;//assigns parameters to member variables
-		t_name=name;
-		if (gender=='M')//uses gender and marital status to find prefix
-		{
-			prefix="Mr. ";
-		}
-		else if (gender=='F')
-		{
-			if (marital=='M')
-			{
-				prefix="Mrs. ";
-			}
-			else if (marital=='S')
-			{
-				prefix="Miss ";
-			}
-		}
-	}
-	void getSupplies(int index)
-	{
-		vector<string> genList={"plastic folders", "glue sticks","pack of colored pencils","pack of crayons","composition book"};
-		supplies=genList[index]
-	}
-	void format(string name, string supp1, string supp2, string supp3)
-	{
-		cout<<"**"<<prefix<<t_name<<"'s School Supplies List"<<"**"<<'\n';
-		//cout<<supplies1<<'\n'<<supplies2<<'\n'<<supplies3<<'\n';
-	}
-};
-
-int main()
-{
-	char marital1='S';
-	char gender1='F';
-	char marital2='M';
-	char gender2='F';
-	char marital3='M';
-	char gender3='M';
-	
-	Supplies prater()
-	
+    //Shafer
+    string name3=t_name3.getName(2);
+    string ssupply1=supplies.getSupplies(3);
+    int s_qsupply1=total.getAmount(2);
+    string ssupply2=supplies.getSupplies(0);
+    int s_qsupply2=total.getAmount(1);
+    string ssupply3=supplies.getSupplies(5);
+    int s_qsupply3=total.getAmount(1);
+    
+    cout<<"**"<<name3<<"'s School Supply List**\n";
+    cout<<s_qsupply1<<'\t'<<ssupply1<<'\n'<<s_qsupply2<<'\t'<<ssupply2<<'\n'<<s_qsupply3<<'\t'<<ssupply3<<'\n'<<'\n';
 	
 	return 0;
 }
- */
-
-/*
-int main()
-{
-	//boiler plate text
-	string asterisk="**";
-	string ssl="School Supply List";
-	
-	//teachers
-	string kinder="Prater";
-	string socialstudies="Threatt";
-	string math_science="Shafer";
-	
-	//school supplies
-	string pf="plastic folders";
-	string gs="glue sticks";
-	string cp="pack of colored pencils";
-	
-	//prefix
-	//vector<string> prefix={"Mr. ","Mrs. ","Miss ","Ms. ","Dr. "};
-	
-	cout<<asterisk<<"Ms. "<<kinder<<"'s "<<ssl<<asterisk<<"\n";
-	cout<<pf<<'\n'
-		<<gs<<'\n'
-		<<"packs of crayons \n"
-		<<'\n';
-	
-	cout<<asterisk<<"Mrs. "<<socialstudies<<"'s "<<ssl<<asterisk<<"\n";
-	cout<<pf<<'\n'
-		<<cp<<'\n'
-		<<"composition book \n"
-		<<'\n';
-	
-	cout<<asterisk<<"Mr. "<<math_science<<"'s "<<ssl<<asterisk<<'\n';
-	cout<<gs<<'\n'
-		<<cp<<'\n'
-		<<"ruler \n"
-		<<'\n';
-*/
